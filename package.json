@@ -1,0 +1,27 @@
+{
+  "name": "tbenc",
+  "version": "0.0.1",
+  "description": "Time-based encryption",
+  "main": "./dist/tbenc.min.js",
+  "types": "./dist/tbenc.d.ts",
+  "scripts": {
+    "dev": "npm run tslint && tsc",
+    "dev:watch": "nodemon --exec 'npm run dev || exit 1'",
+    "tslint": "tslint --project .",
+    "build": "npm run dev && uglifyjs ./dist/tbenc.js -o ./dist/tbenc.min.js",
+    "test": "npm run clean && jest && npm run clean",
+    "test:coverage": "npm run clean && jest --coverage && npm run clean",
+    "clean": "rm -rf dist"
+  },
+  "author": "Grigory Latyshev <thegriglat@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^23.3.7",
+    "jest": "^23.6.0",
+    "nodemon": "^1.17.5",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2",
+    "uglify-js": "^3.4.9"
+  }
+}
